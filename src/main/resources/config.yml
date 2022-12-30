@@ -1,0 +1,48 @@
+#提示语部分  支持 &颜色字符 与 &颜色字符  1.8保存请用ASNI编码 1.9+请用UTF-8编码
+#AFKIng:当玩家在挂机时但是却输入了/gj on所提示的信息
+#IsNotAFK:当玩家不在挂机时但是却输入了/gj off所提示的信息
+#AFKRun:挂机开始提示信息
+#AFKQuit:挂机结束提示信息
+#AFKUseCommand:当玩家挂机时输入了其他指令
+Tips:
+  AFKIng: "&8[&6挂机&8] &e> &a你正在挂机..."
+  IsNotAFK: "&8[&6挂机&8] &e> &a你不在挂机..."
+  AFKRun: "&8[&6挂机&8] &e> &a挂机中..."
+  AFKQuit: "&8[&6挂机&8] &e> &a挂机结束"
+  AFKUseCommand: "&8[&6挂机&8] &e> &a你无法在挂机状态下使用其他指令"
+  WhenInAirAFK: "&8[&6挂机&8] &e> &c请勿在空中挂机!"
+
+#领地区域挂机
+Residence:
+  #开启区域挂机
+  Enable: false
+  #区域名(领地名)
+  Name: "test"
+  #不在任何一块领地时
+  NoInAResidence: "&8[&6挂机&8] &e> &c你不在任何一块领地中"
+  #不在正确的领地时
+  NoInRightResidence: "&8[&6挂机&8] &e> &7你不在一块能挂机的领地中,你需要站在领地 &e%res_name% &7才能使用"
+
+#挂机相关选项
+Task:
+  #周期(period):修改这个就能够更改每多少秒进行一次经验的给予或者是金币的给予同时也是多少秒进行一次复位 单位: 秒
+  RewardPeriod: 10
+  # 1.5 Feature: 现在将奖励与tp同步进行分离, 单位: 秒
+  TeleportPeriod: 1
+  # 1.5 Feature: 允许使用在挂机的时候后台执行相关命令
+  Commands:
+    - "eco give %player% 0.05"
+    - "/exp give %player% 1"
+  ReachMaxMessage: "&cYou reached the daily Limit"
+  MaxDailyMoney: 100
+  # 给多少钱，与自定义命令里的保持一致
+  Money: 0.05
+
+#全息设置
+#Material:设置悬浮物品的id
+#Data:设置悬浮物品的特殊值如 35:6 后面的6就是特殊值
+#Line:设置悬浮字
+Item:
+  Material: 399
+  Data: 0
+  Line: "&c&l[挂机中]"

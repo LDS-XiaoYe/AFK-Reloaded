@@ -1,0 +1,13 @@
+name: AFK
+main: com.mcstaralliance.afk.Entry
+version: 1.5
+author: Zoyn
+depend: [HolographicDisplays,Vault]
+softdepend: [Residence]
+commands:
+  gj:
+permission:
+  gj.reload:
+    default: op
+  gj.on:
+    default: true
