@@ -54,7 +54,7 @@ public class CheckRunnable implements Runnable {
                 saveFiles(data,config);
             }
             if(data.getInt(player.getName()) >= Entry.getInstance().getConfig().getInt("Task.MaxDailyMoney")){
-                player.sendMessage(Entry.getInstance().getConfig().getString("ReachMaxMessage").replaceAll("&", "§"));
+                player.sendMessage(Entry.getInstance().getConfig().getString("Task.ReachMaxMessage").replaceAll("&", "§"));
             }else{
                 List<String> commands = Entry.getInstance().getConfig().getStringList("Task.Commands");
                 commands.forEach(s -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), s.replaceAll("&", "§").replaceAll("%player%", player.getName())));
