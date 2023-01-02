@@ -66,6 +66,15 @@ public class AFKCommand implements CommandExecutor {
 
                 return true;
             }
+            if (args[0].equalsIgnoreCase("clear")) {
+                if (!player.hasPermission("gj.clear")) {
+                    player.sendMessage("§c权限不足!");
+                    return true;
+                }
+                config.delete();
+                player.sendMessage("§8[§6挂机§8] §e> §a数据已清除");
+                return true;
+            }
             if (args[0].equalsIgnoreCase("test")) {
                 if (!player.hasPermission("gj.test")) {
                     player.sendMessage("§c权限不足!");

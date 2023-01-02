@@ -44,7 +44,11 @@ public class Entry extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
         instance.saveResource("data.yml",false);
-        initVault();
+        if (!initVault()){
+            getLogger().warning("Vault初始化失败，插件已关闭");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
 
         hookResidence();
         register();

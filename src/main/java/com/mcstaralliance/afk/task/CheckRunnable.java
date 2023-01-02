@@ -24,7 +24,7 @@ public class CheckRunnable implements Runnable {
     @SuppressWarnings("deprecation")
     @Override
     public void run() {
-        LocalTime now = LocalTime.now();
+ //       LocalTime now = LocalTime.now();
         for (int i = 0; i < AFKCommand.afkPlayer.size(); i++) {
             String name = AFKCommand.afkPlayer.get(i);
             if (AFKCommand.map.get(name) == null) {
@@ -46,14 +46,14 @@ public class CheckRunnable implements Runnable {
             /* 离线检查结束 */
 
             Player player = offlinePlayer.getPlayer();
-            if(now.getHour() == 5 && now.getMinute() == 0){
-                data.set(player.getName(),0);
-                saveFiles(data,config);
-            }else{
-                data.set(player.getName(),economy.getBalance(player) + Entry.getInstance().getConfig().getDouble("Task.Money"));
-                saveFiles(data,config);
-            }
-            if(data.getInt(player.getName()) >= Entry.getInstance().getConfig().getInt("Task.MaxDailyMoney")){
+      //      if(now.getHour() == 5 && now.getMinute() == 0){
+      //        data.set(player.getName(), 0.0);
+      //          saveFiles(data,config);
+      //      }else{
+            data.set(player.getName(), data.getDouble(player.getName(), 0.0) + Entry.getInstance().getConfig().getDouble("Task.Money"));
+            saveFiles(data,config);
+      //      }
+            if(data.getDouble(player.getName(), 0.0) >= Entry.getInstance().getConfig().getInt("Task.MaxDailyMoney")){
                 player.sendMessage(Entry.getInstance().getConfig().getString("Task.ReachMaxMessage").replaceAll("&", "§"));
             }else{
                 List<String> commands = Entry.getInstance().getConfig().getStringList("Task.Commands");

@@ -75,21 +75,21 @@
             <artifactId>HolographicDisplays</artifactId>    <!--库名称，也可以自定义-->
             <version>1.0</version> <!--版本号-->
             <scope>system</scope> <!--作用域-->
-            <systemPath>${basedir}\src\lib\HolographicDisplays.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+            <systemPath>${basedir}/lib/HolographicDisplays.jar</systemPath> <!--项目根目录下的lib文件夹下-->
         </dependency>
         <dependency>
             <groupId>Residence4</groupId>  <!-- 库名称，也可以自定义 -->
             <artifactId>Residence4</artifactId>    <!--库名称，也可以自定义-->
             <version>1.0</version> <!--版本号-->
             <scope>system</scope> <!--作用域-->
-            <systemPath>${basedir}\src\lib\Residence4.8.8.2.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+            <systemPath>${basedir}/lib/Residence4.8.8.2.jar</systemPath> <!--项目根目录下的lib文件夹下-->
         </dependency>
         <dependency>
             <groupId>Vault</groupId>  <!-- 库名称，也可以自定义 -->
             <artifactId>Vault</artifactId>    <!--库名称，也可以自定义-->
             <version>1.0</version> <!--版本号-->
             <scope>system</scope> <!--作用域-->
-            <systemPath>${basedir}\src\lib\Vault-1.7.3.jar</systemPath> <!--项目根目录下的lib文件夹下-->
+            <systemPath>${basedir}/lib/Vault-1.7.3.jar</systemPath> <!--项目根目录下的lib文件夹下-->
         </dependency>
     </dependencies>
 </project>
