@@ -36,7 +36,7 @@ public class AFKCommand implements CommandExecutor {
         }
     }
 
-    File config = new File(com.mcstaralliance.afk.Entry.getPlugin(com.mcstaralliance.afk.Entry.class).getDataFolder(),"data.yml");
+    File config = new File(Entry.getPlugin(Entry.class).getDataFolder(),"data.yml");
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("gj")) {
             if (args.length == 0) {
