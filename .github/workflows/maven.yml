@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - uses: upload-artifact@v3
+    - uses: actions/upload-artifact@v3
       with:
         name: AFK
         path: target/AFK-*.jar
