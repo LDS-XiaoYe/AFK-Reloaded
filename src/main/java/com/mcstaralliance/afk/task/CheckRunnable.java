@@ -23,10 +23,11 @@ public class CheckRunnable implements Runnable {
     public void run() {
         LocalTime now = LocalTime.now();
         File config = new File(com.mcstaralliance.afk.Entry.getPlugin(com.mcstaralliance.afk.Entry.class).getDataFolder(),"data.yml");
-        FileConfiguration data = YamlConfiguration.loadConfiguration(config);
         if(now.getHour() == 5 && now.getMinute() == 0){
             config.delete();
+            return;
         }
+        FileConfiguration data = YamlConfiguration.loadConfiguration(config);
         // 不太优雅，在这一分钟会删好多次
         for (int i = 0; i < AFKCommand.afkPlayer.size(); i++) {
             String name = AFKCommand.afkPlayer.get(i);

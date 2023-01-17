@@ -47,6 +47,22 @@ public class AFKCommand implements CommandExecutor {
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase("clear")) {
+                if(sender instanceof Player){
+                    if(sender.isOp()){
+                        config.delete();
+                        sender.sendMessage("§8[§6挂机§8] §e> §a数据已清除");
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    config.delete();
+                    Entry.getInstance().getLogger().info("§8[§6挂机§8] §e> §a数据已清除");
+                    return true;
+                }
+            }
+
             if (!(sender instanceof Player)) {
                 sender.sendMessage("§f请在游戏中输入!");
                 return true;
@@ -66,15 +82,7 @@ public class AFKCommand implements CommandExecutor {
 
                 return true;
             }
-            if (args[0].equalsIgnoreCase("clear")) {
-                if (!player.hasPermission("gj.clear")) {
-                    player.sendMessage("§c权限不足!");
-                    return true;
-                }
-                config.delete();
-                player.sendMessage("§8[§6挂机§8] §e> §a数据已清除");
-                return true;
-            }
+
             if (args[0].equalsIgnoreCase("test")) {
                 if (!player.hasPermission("gj.test")) {
                     player.sendMessage("§c权限不足!");
