@@ -83,34 +83,6 @@ public class AFKCommand implements CommandExecutor {
                 return true;
             }
 
-            if (args[0].equalsIgnoreCase("test")) {
-                if (!player.hasPermission("gj.test")) {
-                    player.sendMessage("§c权限不足!");
-                    return true;
-                }
-                FileConfiguration myConfig = YamlConfiguration.loadConfiguration(config);
-                myConfig.set(player.getName(), economy.getBalance(player));
-                try {
-                    myConfig.save(config);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                return true;
-            }
-            if (args[0].equalsIgnoreCase("test2")) {
-                if (!player.hasPermission("gj.test2")) {
-                    player.sendMessage("§c权限不足!");
-                    return true;
-                }
-                FileConfiguration myConfig = YamlConfiguration.loadConfiguration(config);
-                myConfig.set(player.getName(), 0);
-                try {
-                    myConfig.save(config);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                return true;
-            }
             if ((args[0].equalsIgnoreCase("on"))) {
                 if (!player.hasPermission("gj.on")) {
                     player.sendMessage("§c权限不足!");

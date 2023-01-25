@@ -9,11 +9,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.LocalTime;
 import java.util.List;
 
-import static com.mcstaralliance.afk.Entry.economy;
 import static com.mcstaralliance.afk.command.AFKCommand.saveFiles;
 
 public class CheckRunnable implements Runnable {
@@ -22,7 +20,7 @@ public class CheckRunnable implements Runnable {
     @Override
     public void run() {
         LocalTime now = LocalTime.now();
-        File config = new File(com.mcstaralliance.afk.Entry.getPlugin(com.mcstaralliance.afk.Entry.class).getDataFolder(),"data.yml");
+        File config = new File(Entry.getPlugin(Entry.getInstance().getClass()).getDataFolder(),"data.yml");
         if(now.getHour() == 5 && now.getMinute() == 0){
             config.delete();
             return;
